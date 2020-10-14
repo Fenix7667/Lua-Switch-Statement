@@ -3,7 +3,8 @@
 local Switch = function(Value, Cases)
     assert(type(Cases) == "table", "Switch statement second argument must be a table with the possible cases!");
     
-    (Cases[Value] or Cases["default"])();
+    local Function = (Cases[Value] or Cases["default"]);
+    if (Function) then Function() end;
 
     return (Cases[Value] and true or false);
 end;
@@ -19,7 +20,7 @@ local Success = Switch(5, {
         print("It's 5.");
     end;
 
-    ["default"] = function()
+    default = function()
         print("Default run case.");
     end;
 });
