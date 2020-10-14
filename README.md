@@ -7,7 +7,7 @@ If a case is found Switch will return true. If default function run or switch do
 Code example:
 
 ```lua
-local Success = Switch(VARIABLE, {
+local Success = Switch(VALUE, {
     [5] = function()
         --| Will run if Variable has the value of 5.
     end;
