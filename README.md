@@ -12,7 +12,7 @@ local Success = Switch(VARIABLE, {
         --| Will run if Variable has the value of 5.
     end;
 
-    ["default"] = function()
+    default = function()
         --| Will run if any other case wans't found.
     end;
 });
